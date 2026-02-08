@@ -43,7 +43,7 @@ const Navbar: React.FC<NavbarProps> = ({
   const navItems = [
     { id: 'marketplace', label: 'Marketplace', icon: HeartIcon },
     { id: 'mydates', label: 'My Dates', icon: CalendarIcon },
-    { id: 'world', label: 'Virtual World', icon: GlobeIcon },
+    { id: 'world', label: 'Video Rooms', icon: GlobeIcon },
     { id: 'wallet', label: 'Wallet', icon: WalletIcon },
     { id: 'analytics', label: 'Analytics', icon: ChartIcon },
   ];

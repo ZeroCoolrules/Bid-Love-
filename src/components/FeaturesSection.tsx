@@ -23,8 +23,8 @@ const FeaturesSection: React.FC = () => {
     },
     {
       icon: GlobeIcon,
-      title: 'Virtual World',
-      description: 'Explore immersive venues in your local area - restaurants, clubs, parks, and more.',
+      title: 'Video Rooms',
+      description: 'Join one-on-one or group streaming rooms with live reactions and co-watching.',
       color: 'from-green-500 to-emerald-500',
     },
     {

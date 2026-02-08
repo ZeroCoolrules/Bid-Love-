@@ -614,6 +614,8 @@ const AppLayout: React.FC = () => {
             <VirtualWorld
               venues={venues}
               onSelectVenue={handleSelectVenue}
+              members={characters}
+              onViewProfile={handleViewProfile}
             />
           </div>
         );
