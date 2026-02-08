@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
-import { HeartIcon, TokenIcon, WalletIcon, UserIcon, MenuIcon, CloseIcon, GlobeIcon, ChartIcon, LogOutIcon, SettingsIcon, ChevronDownIcon, CalendarIcon } from './ui/Icons';
+import { HeartIcon, TokenIcon, WalletIcon, UserIcon, MenuIcon, CloseIcon, GlobeIcon, ChartIcon, LogOutIcon, SettingsIcon, ChevronDownIcon, CalendarIcon, PlayIcon } from './ui/Icons';
 
 interface NavbarProps {
   tokenBalance: number;
@@ -42,6 +42,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
   const navItems = [
     { id: 'marketplace', label: 'Marketplace', icon: HeartIcon },
+    { id: 'rooms', label: 'Virtual Rooms', icon: PlayIcon },
     { id: 'mydates', label: 'My Dates', icon: CalendarIcon },
     { id: 'world', label: 'Virtual World', icon: GlobeIcon },
     { id: 'wallet', label: 'Wallet', icon: WalletIcon },

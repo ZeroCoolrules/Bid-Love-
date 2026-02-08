@@ -13,6 +13,7 @@ import TokenExplainer from './TokenExplainer';
 import CTASection from './CTASection';
 import Marketplace from './Marketplace';
 import VirtualWorld from './VirtualWorld';
+import VirtualRooms from './VirtualRooms';
 import TokenWallet from './TokenWallet';
 import Analytics from './Analytics';
 import CharacterBuilder from './CharacterBuilder';
@@ -24,6 +25,7 @@ import CashoutModal from './CashoutModal';
 import DateSession from './DateSession';
 import MyDates from './MyDates';
 import Footer from './Footer';
+import MemberDirectory from './MemberDirectory';
 
 // Mock data for when database is empty
 const mockCharacters: Character[] = [
@@ -245,6 +247,7 @@ const AppLayout: React.FC = () => {
   const [characters, setCharacters] = useState<Character[]>(mockCharacters);
   const [dateListings, setDateListings] = useState<DateListing[]>(mockDateListings);
   const [venues, setVenues] = useState<Venue[]>(mockVenues);
+  const [savedProfileIds, setSavedProfileIds] = useState<string[]>([]);
   
   // Modal states
   const [showCharacterBuilder, setShowCharacterBuilder] = useState(false);
@@ -261,6 +264,17 @@ const AppLayout: React.FC = () => {
   // Fetch data on mount and when user changes
   useEffect(() => {
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    const savedProfiles = localStorage.getItem('savedProfiles');
+    if (savedProfiles) {
+      try {
+        setSavedProfileIds(JSON.parse(savedProfiles));
+      } catch (error) {
+        console.error('Error parsing saved profiles:', error);
+      }
+    }
   }, []);
 
   // Fetch user's character when authenticated
@@ -446,6 +460,20 @@ const AppLayout: React.FC = () => {
     setSelectedProfile(character);
   };
 
+  const handleToggleSaveProfile = (characterId: string) => {
+    if (!user) {
+      setShowAuthModal(true);
+      return;
+    }
+    setSavedProfileIds(prev => {
+      const next = prev.includes(characterId)
+        ? prev.filter(id => id !== characterId)
+        : [...prev, characterId];
+      localStorage.setItem('savedProfiles', JSON.stringify(next));
+      return next;
+    });
+  };
+
   const handlePurchaseTokens = async (amount: number): Promise<boolean> => {
     setTokenBalance(prev => prev + amount);
     return true;
@@ -614,6 +642,19 @@ const AppLayout: React.FC = () => {
             <VirtualWorld
               venues={venues}
               onSelectVenue={handleSelectVenue}
+            />
+          </div>
+        );
+
+      case 'rooms':
+        return (
+          <div className="pt-20 min-h-screen bg-[#0d0618]">
+            <VirtualRooms characters={characters} onOpenProfile={handleViewProfile} />
+            <MemberDirectory
+              characters={characters}
+              savedProfileIds={savedProfileIds}
+              onToggleSave={handleToggleSaveProfile}
+              onViewProfile={handleViewProfile}
             />
           </div>
         );
