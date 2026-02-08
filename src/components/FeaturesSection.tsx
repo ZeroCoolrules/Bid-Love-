@@ -1,5 +1,5 @@
 import React from 'react';
-import { TokenIcon, HeartIcon, GlobeIcon, ChartIcon, SparklesIcon, UserIcon } from './ui/Icons';
+import { TokenIcon, HeartIcon, GlobeIcon, ChartIcon, SparklesIcon, UserIcon, PlayIcon, CheckCircleIcon } from './ui/Icons';
 
 const FeaturesSection: React.FC = () => {
   const features = [
@@ -28,15 +28,15 @@ const FeaturesSection: React.FC = () => {
       color: 'from-green-500 to-emerald-500',
     },
     {
-      icon: SparklesIcon,
-      title: 'Unified Access',
-      description: 'Sign up once on Cupidspoint DatingPro and unlock Bid Love plus ClimaxCoordinator sessions instantly.',
+      icon: PlayIcon,
+      title: 'Virtual Video Rooms',
+      description: 'Launch 1:1 or group streaming rooms with shared controls, overlays, and private queues.',
       color: 'from-purple-500 to-pink-500',
     },
     {
-      icon: ChartIcon,
-      title: 'Dating Analytics',
-      description: 'Track your performance, learn from experiences, and get personalized tips to improve.',
+      icon: CheckCircleIcon,
+      title: 'Saved Profiles',
+      description: 'Store member profiles with personality traits and interests so others can review their characteristics.',
       color: 'from-indigo-500 to-purple-500',
     },
   ];

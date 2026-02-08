@@ -664,19 +664,25 @@ const AppLayout: React.FC = () => {
                     </div>
                     <div className="p-6">
                       <p className="text-white/80 mb-6">{currentCharacter.bio}</p>
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {currentCharacter.personality_traits.map((trait, i) => (
-                          <span key={i} className="px-3 py-1 bg-[#00D9FF]/20 rounded-full text-[#00D9FF] text-sm">
-                            {trait}
-                          </span>
-                        ))}
+                      <div className="mb-4">
+                        <h3 className="text-white/60 text-sm font-medium mb-2">Characteristics</h3>
+                        <div className="flex flex-wrap gap-2">
+                          {currentCharacter.personality_traits.map((trait, i) => (
+                            <span key={i} className="px-3 py-1 bg-[#00D9FF]/20 rounded-full text-[#00D9FF] text-sm">
+                              {trait}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                      <div className="flex flex-wrap gap-2">
-                        {currentCharacter.interests.map((interest, i) => (
-                          <span key={i} className="px-3 py-1 bg-white/10 rounded-full text-white/70 text-sm">
-                            {interest}
-                          </span>
-                        ))}
+                      <div>
+                        <h3 className="text-white/60 text-sm font-medium mb-2">Interests</h3>
+                        <div className="flex flex-wrap gap-2">
+                          {currentCharacter.interests.map((interest, i) => (
+                            <span key={i} className="px-3 py-1 bg-white/10 rounded-full text-white/70 text-sm">
+                              {interest}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>

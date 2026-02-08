@@ -76,7 +76,7 @@ const ProfileModal: React.FC<ProfileModalProps> = ({ character, onClose, onBid }
 
           {/* Personality Traits */}
           <div className="mb-6">
-            <h3 className="text-white/60 text-sm font-medium mb-3">Personality</h3>
+            <h3 className="text-white/60 text-sm font-medium mb-3">Characteristics</h3>
             <div className="flex flex-wrap gap-2">
               {(character.personality_traits || []).map((trait, index) => (
                 <span
