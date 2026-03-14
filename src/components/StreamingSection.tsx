@@ -9,19 +9,29 @@ const StreamingSection: React.FC = () => {
       description: 'Launch HD video dates with synchronized ambiance, scene prompts, and dynamic overlays.',
     },
     {
+      icon: PlayIcon,
+      title: '1:1 Virtual Rooms',
+      description: 'Open private video rooms for focused one-on-one dates with guided prompts.',
+    },
+    {
+      icon: HeartIcon,
+      title: 'Group Lounge Rooms',
+      description: 'Invite multiple members into a shared room with moderated turns and spotlight controls.',
+    },
+    {
       icon: MessageIcon,
       title: 'Interactive Reactions',
       description: 'Drop live reactions, send curated prompts, and share private notes in real time.',
     },
     {
-      icon: HeartIcon,
-      title: 'ClimaxCoordinator Guidance',
-      description: 'Enable optional coaching from ClimaxCoordinator.com for confidence, intimacy, and pacing.',
-    },
-    {
       icon: TokenIcon,
       title: 'Dream Coin Rewards',
       description: 'Earn Dream Coin for completed streams and redeem perks across the whole network.',
+    },
+    {
+      icon: SparklesIcon,
+      title: 'Profile Spotlights',
+      description: 'Showcase saved profiles with traits, interests, and compatibility cues during the stream.',
     },
   ];
 
@@ -37,8 +47,7 @@ const StreamingSection: React.FC = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00D9FF] to-[#FFB800]"> Reimagined</span>
           </h2>
           <p className="text-white/60 max-w-2xl mx-auto text-lg">
-            Host cinematic streams that blend Bid Love dates with Cupidspoint DatingPro matchmaking and
-            ClimaxCoordinator guidance.
+            Host cinematic streams with 1:1 and group virtual rooms, plus saved profile highlights for every attendee.
           </p>
         </div>
 
