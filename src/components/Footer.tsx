@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
     Platform: [
       { label: 'How It Works', href: '#' },
       { label: 'Dream Coin Economy', href: '#' },
-      { label: 'Virtual World', href: '#' },
+      { label: 'Video Rooms', href: '#' },
       { label: 'Date Modes', href: '#' },
       { label: 'Safety Guidelines', href: '#' },
     ],
@@ -121,7 +121,7 @@ const Footer: React.FC = () => {
               </div>
               <div>
                 <div className="text-2xl font-bold text-white">120+</div>
-                <div className="text-white/50 text-sm">Virtual Venues</div>
+                <div className="text-white/50 text-sm">Video Rooms</div>
               </div>
             </div>
             <div className="flex items-center gap-3">
